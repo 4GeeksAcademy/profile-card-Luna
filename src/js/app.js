@@ -36,8 +36,10 @@ function render(variables = {}) {
           <h1>${variables.name == null ? "Lucy" : variables.name} ${
     variables.lastName == null ? "Boilett" : variables.lastName
   }</h1>
-          <h2>Web Developer</h2>
-          <h3>Miami, USA</h3>
+          <h2>${variables.role == null ? "Web Developer" : variables.role}</h2>
+          <h3>${variables.city == null ? "Miami" : variables.city}, ${
+    variables.country == null ? "USA" : variables.country
+  }</h3>
           <ul class=${
             variables.socialMediaPosition == "position-left"
               ? "position-left"
@@ -46,10 +48,18 @@ function render(variables = {}) {
             <li><a href="https://twitter.com/${
               variables.twitter == null ? "4GeeksAcademy" : variables.twitter
             }"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="https://github.com/4geeksacademy"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://linkedin.com/school/4geeksacademy"><i class="fab fa-linkedin"></i></a></li>
-            <li><a href="https://instagram.com/4geeksacademy"><i class="fab fa-instagram"></i></a></li>
-          </ul>
+            <li><a href="https://github.com/${
+              variables.github == null ? "4GeeksAcademy" : variables.github
+            }"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/${
+              variables.linkedin == null ? "4GeeksAcademy" : variables.linkedin
+            }"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://instagram.com/${
+              variables.instagram == null
+                ? "4GeeksAcademy"
+                : variables.instagram
+            }"><i class="fab fa-instagram"></i></a></li>
+           </ul>
         </div>
     `;
 }
